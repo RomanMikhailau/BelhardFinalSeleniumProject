@@ -2,8 +2,7 @@ package helpers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.log4testng.Logger;
 
 public class WebDriverContainer {
@@ -17,6 +16,10 @@ public class WebDriverContainer {
                 case chrome:
                     driver = new ChromeDriver();
                     LOG.info("Instantiating Chrome driver");
+                    break;
+                case firefox:
+                    driver = new FirefoxDriver();
+                    LOG.info("Instantiating Firefox driver");
                     break;
             }
             driver.manage().window().maximize();
